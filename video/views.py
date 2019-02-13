@@ -49,11 +49,12 @@ def showall(request):
         comments = Comment.objects.filter(Comment_Video_id = vid.id)
         video = Video.objects.get(id = vid.id)
         video.Video_counter = len(comments)
+        counter = video.Video_counter
         video.save()
         for com in comments:
             user = User.objects.get(id = com.Comment_User_id)
             list_com.append((com, user))
-        content.append((vid, list_com))
+        content.append((vid, counter, list_com))
     return render(request, "video.html",{"content":content,
                                          "username":auth.get_user(request).username})
 
@@ -84,6 +85,9 @@ def addcom(request, video_id):
                 comment.Comment_Video = Video.objects.get(id=video_id)
                 comment.Comment_User = User.objects.get(id=request.user.id)
                 forma.save()
+                video = Video.objects.get(id=video_id)
+                video.Video_counter += 1
+                video.save()
                 return redirect("/video/" + str(video_id) + "/")
         else:
             return redirect("/log/register/")
