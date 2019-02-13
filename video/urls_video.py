@@ -9,5 +9,4 @@ urlpatterns = [
     re_path(r'^dislike/ajax/$', views.dislike),
     re_path(r'^likecomment/ajax/$', views.likecomment),
     re_path(r'^addlike/ajax/$', views.addlike)
-
 ]
