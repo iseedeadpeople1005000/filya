@@ -1,0 +1,34 @@
+{% extends 'maintemplate.html' %}
+{% load staticfiles %}
+{% block AllVideo %}
+    <div class="container-fluid">
+        <div class="row">
+
+                {% for con in content %}
+
+                <div class="col-md-3 block">
+                <hr>
+                <iframe width="320" height="240" src="{{ con.0.Video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a href="/video/{{ con.0.id }}/" title="Хит!"><h5>{{ con.0.Video_name }}</h5></a>
+
+                <div class="row">
+                <div class="col-md-2 block">
+                <img src="{% static 'down.png' %}" height="30px" class="dislikevideo" id="{{ con.0.id }}" title="Вниз!">
+                </div>
+                <div class="col-md-2 block">
+                <h7 id="{{ con.0.id }}video" title="Likes">{{ con.0.Video_likes }}</h7>
+                </div>
+                <div class="col-md-2 block">
+                <img src="{% static 'up.png' %}" height="30px" class="likevideo" id="{{ con.0.id }}"  title="Вверх!">
+                </div>
+                </div>
+                <h7><i>{{ con.0.Video_discription }}</i></h7>
+                <hr><h7>Дата публикации: {{ con.0.Video_date }}</h7>
+                <hr><h7 id="{{ con.0.id }}video">Комментариев: {{ con.0.Video_counter }}</h7>
+                </div>
+
+                {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

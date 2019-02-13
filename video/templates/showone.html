@@ -1,0 +1,63 @@
+{% extends 'maintemplate.html' %}
+{% load staticfiles %}
+{% block OneVideo %}
+    <div class="container-fluid">
+        <div class="row">
+                <div class="col-md-6 block">
+                    <hr>
+                    <iframe width="640" height="480" src="{{ video.Video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h3>{{ video.Video_name }}</h3>
+
+        <div class="row">
+
+               <div class="col-md-1 block">
+               <img src="{% static 'down.png' %}" height="30px" class="dislikevideo" id="{{ video.id }}"  title="Вниз!">
+               </div>
+               <div class="col-md-1 block">
+               <h5 id="{{ video.id }}video" title="Likes">{{ video.Video_likes }}</h5>
+               </div>
+               <div class="col-md-1 block">
+               <img src="{% static 'up.png' %}" height="30px" class="likevideo" id="{{ video.id }}"   title="Вверх!">
+               </div>
+
+         </div>
+        <h6><i>{{ video.Video_discription  }}</i></h6>
+        <h6>Дата публикации: {{ video.Video_date }}</h6>
+
+        {% for com in comment %}
+
+        <hr>
+        <h6 style="color:blue">{{ com.0.Comment_text  }}</h6>
+        <h6><b>Автор: {{ com.1 }}</h6></b>
+        <h6>Дата публикации: {{ com.0.Comment_date  }}</h6>
+
+        <div class="row">
+        <div class="col-md-1 block">
+        <h6>Likes:</h6>
+        </div>
+        <div class="col-md-1 block">
+        <h6 id="{{ com.0.id }}com" title="Likes">{{ com.0.Comment_likes }}</h6>
+        </div>
+        <div class="col-md-1 block">
+        <img src="{% static 'up.png' %}" height="20px" class="likecomment" id="{{ com.0.id }}"  title="Мне нравится!">
+        </div>
+        </div>
+        <br>
+        </br>
+
+
+    {% endfor %}
+
+        <form action="/video/addcomment/{{ video.id }}/" id="comment_text" method="post" name="{{ video.id }}">
+            {% csrf_token %}
+            {{ form }}
+        <br><input type="submit" class="button" value="Добавить комментарий"></br>
+        </form>
+
+                </div>
+                <div class="col-md-6 block">
+
+                </div>
+            </div>
+        </div>
+{% endblock %}

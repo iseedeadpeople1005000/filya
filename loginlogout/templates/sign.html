@@ -1,0 +1,35 @@
+{% extends 'maintemplate.html' %}
+
+{% block sign %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 block">
+        <h3></h3>
+    </div>
+    <div class="col-md-4 block" align="center">
+        <p><img src="/static/filhi.jpg" width="300" height="200"></p>
+    </div>
+    <div class="col-md-4 block">
+        <h3></h3>
+    </div>
+    <div class="container-fluid"  align="center">
+        <form action="/log/register/" method="post">
+            {% csrf_token %}
+            <label for="username">Имя пользователя: </label>
+            <input type="text" name="username" id="username">
+            <label for="email">Email: </label>
+            <input type="password" name="email" id="email">
+            <label for="password">Пароль: </label>
+            <input type="password" name="password" id="password">
+            {% if login_error %}
+                <label class="error">{{ login_error }}</label>
+            {% endif %}
+            <input class="button" type="submit" value="Зарегистрироваться">
+        </form>
+    </div>
+
+{% endblock %}
+
+
+
+
