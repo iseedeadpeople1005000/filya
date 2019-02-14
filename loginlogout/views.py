@@ -20,19 +20,14 @@ def login(request):
             auth.login(request, user)
             return redirect('/')
         else:
-            args['login_error'] = 'Пользователь не найден'
+            args['login_error'] = 'Пожалуйста, введите правильные имя пользователя и пароль.'
             return render(request, 'log.html', args)
     else:
         return render(request, 'log.html', args)
 
-
 def sign(request):
     args = {}
     args.update(csrf(request))
-    args['form'] = form.UserForm
-    args['url'] = "/log/register/"
-    args['user'] = auth.get_user(request).username
-
     if request.POST:
         try:
             user = User.objects.create_user(username=request.POST.get('username', ""),
@@ -43,9 +38,9 @@ def sign(request):
 
         if user:
             auth.login(request, user)
-            return redirect('/video/all/')
+            return redirect('/')
         else:
-            args["error"] = "Пользователь уже существует"
+            args["sign_error"] = "Пользователь уже существует"
             return render(request, "sign.html", args)
     else:
         return render(request, 'sign.html', args)

@@ -21,8 +21,8 @@
             <input type="password" name="email" id="email">
             <label for="password">Пароль: </label>
             <input type="password" name="password" id="password">
-            {% if login_error %}
-                <label class="error">{{ login_error }}</label>
+            {% if sign_error %}
+                <label class="error">{{ sign_error }}</label>
             {% endif %}
             <input class="button" type="submit" value="Зарегистрироваться">
         </form>

@@ -16,8 +16,3 @@ class CommentForm(ModelForm):
 				"maxlength": 1000,
 				'required': True,
 				'placeholder': 'Добавить комментарий'})}
-
-class UserForm(ModelForm):
-	class Meta():
-		model = User
-		fields = ['username', 'email', 'password']
