@@ -2,25 +2,31 @@
 {% load staticfiles %}
 {% block OneVideo %}
     <div class="container-fluid">
-        <div class="row">
+                <div class="row">
                 <div class="col-md-6 block">
                     <hr>
                     <iframe width="640" height="480" src="{{ video.Video_url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <h3>{{ video.Video_name }}</h3>
 
-        <div class="row">
+                <div class="row">
 
-               <div class="col-md-1 block">
-               <img src="{% static 'down.png' %}" height="30px" class="dislikevideo" id="{{ video.id }}"  title="Вниз!">
-               </div>
-               <div class="col-md-1 block">
-               <h5 id="{{ video.id }}video" title="Likes">{{ video.Video_likes }}</h5>
-               </div>
-               <div class="col-md-1 block">
-               <img src="{% static 'up.png' %}" height="30px" class="likevideo" id="{{ video.id }}"   title="Вверх!">
-               </div>
+                   <div class="col-md-1 block">
+                       <center>
+                   <img src="{% static 'down.png' %}" height="30px" class="dislikevideo" id="{{ video.id }}"  title="Вниз!">
+                           </center>
+                   </div>
+                   <div class="col-md-1 block">
+                       <center>
+                   <h5 id="{{ video.id }}video" title="Likes">{{ video.Video_likes }}</h5>
+                           </center>
+                   </div>
+                   <div class="col-md-1 block">
+                       <center>
+                   <img src="{% static 'up.png' %}" height="30px" class="likevideo" id="{{ video.id }}"   title="Вверх!">
+                           </center>
+                   </div>
+                </div>
 
-         </div>
         <h6><i>{{ video.Video_discription  }}</i></h6>
         <h6>Дата публикации: {{ video.Video_date }}</h6>
 
@@ -31,20 +37,33 @@
         <h6><b>Автор: {{ com.1 }}</h6></b>
         <h6>Дата публикации: {{ com.0.Comment_date  }}</h6>
 
-        <div class="row">
-        <div class="col-md-1 block">
-        <h6>Likes:</h6>
-        </div>
-        <div class="col-md-1 block">
-        <h6 id="{{ com.0.id }}com" title="Likes">{{ com.0.Comment_likes }}</h6>
-        </div>
-        <div class="col-md-1 block">
-        <img src="{% static 'up.png' %}" height="20px" class="likecomment" id="{{ com.0.id }}"  title="Мне нравится!">
-        </div>
-        </div>
+                <div class="row">
+
+
+                        <div class="col-md-4 block">
+                        <div class="row">
+
+
+
+                    <div class="col-md-2 block">
+                    <h6>Likes:</h6>
+                    </div>
+
+                    <div class="col-md-2 block">
+                    <h6 id="{{ com.0.id }}com" title="Likes">{{ com.0.Comment_likes }}</h6>
+                    </div>
+
+                    <div class="col-md-2 block">
+                    <img src="{% static 'up.png' %}" height="20px" class="likecomment" id="{{ com.0.id }}"  title="Мне нравится!">
+                    </div>
+
+                        </div>
+                        </div>
+
+
+                </div>
         <br>
         </br>
-
 
     {% endfor %}
 
@@ -54,8 +73,99 @@
         <br><input type="submit" class="button" value="Добавить комментарий"></br>
         </form>
 
-                </div>
-                <div class="col-md-6 block">
+
+</div>
+<div class="col-md-6 block">
+<br>
+<div class="row">
+<div class="col-md-12 block">
+<center>
+<img src="{% static 'cup.png' %}" height="150px">
+</center>
+<br>
+</div>
+</div>
+
+
+<h5 align="center" style="color:#118111">«World Music Awards»</h5>
+<br>
+<h6>Как самому популярному исполнителю России, лидеру по продажам звуконосителей «Best selling Russian Artist»</h6>
+<br>
+<i>
+<h6>8 мая 1996 — Монте-Карло, песня «Днём и ночью»</h6>
+<h6>5 мая 1999 — Монте-Карло, песня «Come and dance»</h6>
+<h6>15 сентября 2004 — Лас-Вегас, песня «Un dia feliz»</h6>
+<h6>31 августа 2005 — Лос-Анджелес, песня «Карнавал»</h6>
+<h6>9 ноября 2008 — Монте-Карло, песня «Tango»</h6>
+</i>
+<br>
+
+
+<h5 align="center" style="color:#118111">«Овация»</h5>
+<br>
+<i>
+<h6>1993: Певец года</h6>
+<h6>1994: Певец года</h6>
+<h6>1997: за лучший видеоклип 1996 года («Зайка моя»)</h6>
+<h6>май 1998:</h6>
+    <h6 style="text-indent: 35px">Певец года</h6>
+    <h6 style="text-indent: 35px">премия «За пропаганду Российской эстрады» — мировой супертур «Лучшее, любимое и только для Вас!»</h6>
+    <h6 style="text-indent: 35px">премия «За идею и постановку лучшего шоу» — программа «Сюрприз для Аллы» (песня — «Спасибо Вам, враги мои»)</h6>
+<h6>28 апреля 1999: «Лучшее шоу года» — шоу «Лучшее, любимое и только для Вас!»</h6>
+<h6>21 мая 2001: «Лучший гастрольный тур десятилетия» — тур «Лучшее, любимое и только для Вас!»</h6>
+<h6>2008: Певец года
+</i>
+<br>
+
+
+<h5 align="center" style="color:#118111">«Золотой граммофон»</h5>
+<br>
+<h6>Рекордсмен «Золотого граммофона»: имеет столько статуэток, сколько всего было церемоний: пропустил награды в 2002 и 2008 годах, но получил по 2 награды в 2003 и 2010 годах</h6>
+<br>
+<i>
+<h6>1996: «Карнавал»</h6>
+<h6>1997: «Улетай, туча!»</h6>
+<h6>1998:</h6>
+    <h6 style="text-indent: 35px">«Ой, мама шика дам!»</h6>
+    <h6 style="text-indent: 35px">«Дива» — приз композитору Цвике Пик</h6>
+<h6>1999: «Мышь»</h6>
+<h6>2000: «Огонь и вода»</h6>
+<h6>2001: «Ты поверишь?», «Я за тебя умру!»</h6>
+<h6>2003:</h6>
+    <h6 style="text-indent: 35px">«Жестокая любовь»</h6>
+    <h6 style="text-indent: 35px">«Роза чайная» (совм. с М. Распутиной)</h6>
+<h6>2004: «Немного жаль»</h6>
+<h6>2005:</h6>
+    <h6 style="text-indent: 35px">«Обычная история» (на церемонии — «Попурри»)</h6>
+    <h6 style="text-indent: 35px">приз «Самый востребованный исполнитель»</h6>
+<h6>2006: «Полетели!»</h6>
+<h6>2007: «Сердце в 1000 свечей»</h6>
+<h6>2009: «Просто подари»</h6>
+<h6>2010:</h6>
+    <h6 style="text-indent: 35px">«Струны души» (композитор Юлиана Донская)</h6>
+    <h6 style="text-indent: 35px">«Голос» (совм. с А. Нетребко)</h6>
+<h6>2011: «Снег»</h6>
+<h6>2012: «Я отпускаю тебя»</h6>
+<h6>2013: «Сердце ждет»</h6>
+<h6>2014: «Радость моя»</h6>
+<h6>2015: «Он твоя июллюзия»</h6>
+<h6>2016: «Прохожие»</h6>
+</i>
+<br>
+
+
+<h5 align="center" style="color:#118111">«Звуковая дорожка»</h5>
+<br>
+<i>
+<h6>1994: песни «Марина», «Примадонна»</h6>
+<h6>1995: песни «Днём и ночью», «Посмотри, какое лето», «Милая», «Пташечка»</h6>
+<h6>2003: Певец года, песни «Роза чайная», «Радио-бэйби», «Мечта», «Джалма» (совм. с М. Распутиной)</h6>
+<h6>29 января 2006: Спец.приз «Самый-самый», песня «Попурри»</h6>
+<h6>10 июля 2007: Спец.приз «Евровидение-2006», приз «Видео года», «Вечный двигатель», песня «Полетели!»</h6>
+<h6>2 февраля 2008: Событие и концерт года Зала Славы «Звуковая дорожка» за шоу «Юбилейные шоу» в театре Оперетты, песня «Приглашение на чай» (совм. с М. Распутиной)</h6>
+</i>
+<br>
+
 
                 </div>
             </div>

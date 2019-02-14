@@ -18,17 +18,23 @@
 </head>
 <body bgcolor="#A0BEC4">
 <div class="container-fluid">
+    <br>
   <div class="row">
 
-     <div class="col" align="center">
+     <div class="col-md-4 block">
+     <h3><a href="/about/" title="Хороший парень!">Об авторе</h3>
+     </div>
+
+
+     <div class="col-md-2 block">
      <h3><a href="/log/register/" title="Добро пожаловать!">Регистрация</a></h3>
      </div>
 
-     <div class="col" align="center"  title="Хиты нашего короля!">
+     <div class="col-md-2 block" title="Хиты нашего короля!">
      <h3><a href="/">На главную</a></h3>
      </div>
 
-     <div class="col" align="center">
+     <div class="col-md-2 block">
      <h3>
      {% if user.is_authenticated %}
      <a href="/log/logout/">Выйти ({{ user.username }})</a>
@@ -38,7 +44,7 @@
      </h3>
      </div>
 
-     <div class="col" align="center" title="Все о нашем короле!">
+     <div class="col-md-2 block" title="Все о нашем короле!">
      <h3><a href="https://kirkorov.ru/">Оффициальный сайт</a></h3>
      </div>
 

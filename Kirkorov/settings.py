@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["127.0.0.1","iseedeadpeople100500.pythonanywhere.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    "about",
     "loginlogout",
     "video",
     'django.contrib.admin',
