@@ -1,10 +1,16 @@
-from django.forms import ModelForm, Textarea
-from django.utils.translation import gettext_lazy as _
-from . import models
-from django.contrib.auth import get_user_model
-User = get_user_model()
+from django import forms
+from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 
-class UserForm(ModelForm):
-	class Meta():
-		model = User
-		fields = ['username', 'email', 'password']
+
+class user_form(forms.Form):
+    username = forms.CharField(
+        max_length=20,
+		min_length=6,
+		required = True)
+    email = forms.CharField(
+		required = None)
+    password = forms.CharField(
+        max_length=20,
+		min_length=6,
+		required = True)

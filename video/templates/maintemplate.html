@@ -37,9 +37,9 @@
      <div class="col-md-2 block">
      <h3>
      {% if user.is_authenticated %}
-     <a href="/log/logout/">Выйти ({{ user.username }})</a>
+     <a href="/log/logout/" title="До скорых встреч!">Выйти ({{ user.username }})</a>
      {% else %}
-     <a href="/log/login/">Войти</a>
+     <a href="/log/login/" title="Рады Вас видеть!">Войти</a>
      {% endif %}
      </h3>
      </div>

@@ -16,20 +16,29 @@
         <form action="/log/register/" method="post">
             {% csrf_token %}
             <label for="username">Имя пользователя: </label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" placeholder="Обязательное поле">
             <label for="email">Email: </label>
-            <input type="password" name="email" id="email">
+            <input type="password" name="email" id="email" placeholder="Не обязательное поле">
             <label for="password">Пароль: </label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" placeholder="Обязательное поле">
             {% if sign_error %}
                 <label class="error">{{ sign_error }}</label>
             {% endif %}
             <input class="button" type="submit" value="Зарегистрироваться">
         </form>
     </div>
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 block">
+        <h3></h3>
+    </div>
+    <div class="col-md-6 block">
+        <br>
+        <h6>Имя пользователя должно быть от 6 до 20 любых символов.</h6>
+        <h6>Пароль должен быть от 6 до 20 любых символов.</h6>
+        <h6>Email может быть пустым.</h6>
+    </div>
+    <div class="col-md-3 block">
+        <h3></h3>
+    </div>
 {% endblock %}
-
-
-
-
