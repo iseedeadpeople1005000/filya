@@ -27,5 +27,6 @@ class Comment(models.Model):
     Comment_Video = models.ForeignKey(Video, on_delete=models.CASCADE)
     Comment_User = models.ForeignKey(User, on_delete=models.CASCADE)
 
-
+    def __str__(self):
+        return  self.Comment_date
 # Create your models here. makemigrations
